@@ -2,6 +2,7 @@ package ru.hh.school.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import ru.hh.school.entity.Employer;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -31,6 +32,9 @@ public class GenericDao {
   protected Session getSession() {
     return sessionFactory.getCurrentSession();
   }
-
+  
+  public void update(Object object) {
+    getSession().update(object);
+  }
 
 }
